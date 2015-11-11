@@ -1,0 +1,189 @@
+/**
+ * Import all the rules from the parent.
+ */
+@import "../../bootstrapbase/less/moodle.less";
+
+// Set sideway header colours
+@bodyColor:                         #036;
+@sidewayHeaderColor:                #369; // Alternative #6F6B8E
+
+/* Modified Moodle CSS by Mary Evans based on
+   CSS-Tricks Example
+   by Chris Coyier
+   https://css-tricks.com/sideways-headers/
+   ----------------------------------------*/
+
+.jsenabled .block {
+    border-color: @sidewayHeaderColor;
+}
+
+.jsenabled .block.hidden,
+.jsenabled .block.block_adminblock {
+    background-color: @sidewayHeaderColor;
+}
+
+/* COMMAND ICONS (2011-10-13)
+-------------------------------------*/
+img.iconsmall,
+.block.block_with_controls div.header div.commands a img,
+.course-content ul.topics li.section .right img,
+.course-content ul.topics li.section .left img {
+    height:15px;
+    margin:2px;
+    width:15px;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    padding:1px;
+    -webkit-border-radius:5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, input, textarea {
+    font-family: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial,sans-serif;
+}
+a:link, a:visited { color: #036;}
+
+a:active {
+    outline: 0;
+}
+a:focus {
+    outline: 0;
+}
+#page {
+    font-family: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0;
+}
+#profilename {
+    float: right;
+    font-size: 1.4em;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin: 0;
+    margin-top: 40px;;
+    margin-right: 2px;
+    text-align: right;
+    text-decoration: none;
+    width: 390px;
+    ul {
+        li {
+            padding-left: 10px;
+            padding-right: 0;
+            display: inline;
+            margin-right: 0;
+            list-style-type: none;
+        }
+    }
+    img {
+        vertical-align: middle;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+#profilepic {
+    text-align: right;
+    float: right;
+    margin: 2px 0 2px 2px;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #eee;
+    display: inline;
+    img {
+        width: 74px;
+        height: 74px;
+        border: 3px solid #fff;
+    }
+}
+#profilebar-outerwrap {
+    clear: both;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: 1px solid lighten(@sidewayHeaderColor, 10%);
+    border-radius: 3px 3px 0 0;
+}
+#profilebar {
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    font-weight: 200;
+    max-height: 200px;
+}
+#profilebar-innerwrap {
+    float: none;
+    margin: 0;
+    padding: 5px;
+    width: auto;
+    background-color: lighten(@sidewayHeaderColor, 25%);
+    border-radius: 3px 3px 0 0;
+}
+#profilelogin {
+    text-align: right;
+    width: 390px;
+    margin-right: 0;
+    margin-top: 40px;
+    float: right;
+    ul {
+        li {
+            padding-left: 10px;
+            padding-right: 0;
+            display: inline;
+            margin-right: 0;
+            color: #aeaeae;
+        }
+    }
+    .loginform {
+        width: 7em;
+        margin-left: 4px;
+        display: inline;
+        background: #eeeeee;
+        border: 1px solid #cccccc;
+        color: #333333;
+        padding: 4px;
+    }
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:focus,
+    a:active {
+        text-decoration: none;
+    }
+}
+div.logo {
+    display: block;
+    float: left;
+    height: 75px;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+.dir-rtl {
+    div.logo {
+        float: right;
+        background-position: right top;
+    }
+    #profilepic,
+    #profilename {
+        float: left;
+        text-align: left;
+    }
+}
+
+body.dir-rtl {
+    background-position: right top;
+}
