@@ -30,35 +30,16 @@ if (right_to_left()) {
 
 ?>
 
-<div id="profilename">
-
-<?php if (isloggedin()) {
-
-    $url = $CFG->wwwroot. ' /user/view.php?id=' . $USER->id . '&amp;course=' . $COURSE->id;
-    $togurl = "javascript:postittoggle('profilebar', 'toggle')";
-    $content = '';
-
-    $content .= html_writer::start_tag('ul');
-    $content .= html_writer::tag('li', html_writer::link($url, $USER->firstname));
-    $content .= html_writer::tag('li', html_writer::link($togurl, ' &#9660;', array('id' => 'toggle')));
-    $content .= html_writer::end_tag('ul');
-
-    echo $content;
-
-} ?>
-
-</div>
-
 <div id="profilebar-outerwrap" class="container-fluid">
 <div id="profilebar" style="display: none;">
 <div id="profilebar-innerwrap" class="row-fluid">
 
-    <?php echo $OUTPUT->blocks('side-pre', $sidepre); ?>
-
-    <div class="span4"><h4><?php echo get_string('mystuff', 'theme_postit'); ?></h4></div>
-
-    <?php echo $OUTPUT->blocks('side-post', $sidepost); ?>
-
+<?php echo $OUTPUT->blocks('side-pre', $sidepre); ?>
+<div id="profilecenter" class="row-fluid span4">
+<?php echo $OUTPUT->blocks('side-center', 'span12'); ?>
+<?php echo $OUTPUT->user_menu(); ?>
+</div>
+<?php echo $OUTPUT->blocks('side-post', $sidepost); ?>
 </div>
 <div class="profilebar-clear"></div>
 </div>

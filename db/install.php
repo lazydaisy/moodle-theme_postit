@@ -43,6 +43,6 @@ function xmldb_theme_postit_install() {
     $filerecord->filearea  = 'backgroundimage';
     $filerecord->filepath  = '/';
     $filerecord->itemid    = 0;
-    $filerecord->filename  = 'postit_bg.jpg';
-    $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/postit/pix/images/postit_bg.jpg');
+    $filerecord->filename  = 'postit.jpg';
+    $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/postit/pix/images/postit.jpg');
 }

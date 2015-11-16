@@ -37,14 +37,20 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <div id="page" class="container-fluid">
+<div class="row-fluid">
+    <div id="logo" class="span6 desktop-first-column"></div>
 
-<?php echo $OUTPUT->full_header(); ?>
+        <?php
+    if (!isloggedin()) {
+        include('includes/profilelogin.php');
+    } else {
+        include('includes/profiletoggle.php');
+    } ?>
 
-<?php echo $html->heading; ?>
-
-<?php include('includes/profilelogin.php'); ?>
+</div>
 
 <?php include('includes/profileblock.php'); ?>
+
 
 <div class="navbar navbar-inverse moodle-has-zindex">
     <div class="navbar-inner">
@@ -63,7 +69,10 @@ echo $OUTPUT->doctype() ?>
 </div>
 
 <div id="page-content" class="row-fluid">
-    <div id="region-main" class="region-main span12">
+
+<?php echo $OUTPUT->full_header(); ?>
+
+    <div id="region-main" class="region-main desktop-first-column span12">
         <?php
         echo $OUTPUT->course_content_header();
         echo $OUTPUT->main_content();

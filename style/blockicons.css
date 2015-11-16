@@ -1,0 +1,251 @@
+/*
+ * @author    Shaun Daubney
+ * @package   theme_aardvark
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+.block .header:after {
+    display: block;
+    font-size: 2em;
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+.block_news_items .header:after {
+    color: #29A294;
+    content:"\f0a1";
+}
+
+.block_navigation .header:after {
+    color: #f42941;
+    content:"\f0e8";
+}
+
+.block_calendar_upcoming .header:after,
+.block_calendar_month .header:after {
+    color: #008ecd;
+    content:"\f073";
+}
+
+.block_course_list .header:after {
+    color: #ffce00;
+    content:"\f108";
+}
+
+.block_completionstatus .header:after,
+.block_selfcompletion .header:after {
+    color: #76b900;
+    content:"\f0e4";
+}
+
+.block_rss_client .header:after {
+    color: #ff9500;
+    content:"\f09e";
+}
+
+.block_rss_plus .header:after {
+    color: #ff9500;
+    content:"\f09e";
+}
+
+.block_blog_menu .header:after {
+    color: #ff9500;
+    content:"\f02d";
+}
+
+.block_quiz_results .header:after {
+    color: #76b900;
+    content:"\f080";
+}
+
+.block_quiz_navblock .header:after {
+    color: #76b900;
+    content:"\f126";
+}
+
+.block_glossary_random .header:after {
+    color: #3d3d3d;
+    content:"\f0eb";
+}
+
+.block_book_toc .header:after {
+    color: #3d3d3d;
+    content:"\f02d";
+}
+
+
+.block_participants .header:after,
+.block_people .header:after,
+.block_online_users .header:after {
+    color: #92499e;
+    content:"\f0c0";
+}
+
+.block_html .header:after {
+    color: #eeeeee;
+
+}
+
+.block_section_links .header:after {
+    color: #f42941;
+    content:"\f02e";
+}
+
+.block_activity_modules .header:after {
+    color: #f42941;
+    content:"\f12e";
+}
+
+.block_comments .header:after {
+    color: #ffce00;
+    content:"\f075";
+}
+
+.block_settings .header:after,
+.block_admin_bookmarks .header:after{
+    color: #ccc;
+    content:"\f085";
+}
+
+.block_blog_tags .header:after,
+.block_tags .header:after {
+    color: #ff9f00;
+    content:"\f02c";
+}
+
+.block_private_files .header:after {
+    color: #82cadd;
+    content:"\f114";
+}
+
+.block_block_mentees .header:after {
+    color: #3d3d3d;
+    content:"\f0c0";
+}
+
+.block_messages .header:after {
+    color: #ffce00;
+    content:"\f0e0";
+}
+
+.block_community .header:after {
+    color: #ffce00;
+    content:"\f0ac";
+}
+
+.block_login .header:after {
+    color: #3d3d3d;
+    content:"\f007";
+}
+
+.block_recent_activity .header:after {
+    color: #cee3ed;
+    content:"\f017";
+}
+
+.block_search_forums .header:after {
+    color: #ffce00;
+    content:"\f0e6";
+}
+
+.block_myprofile .header:after {
+    color: #f42941;
+    content:"\f007";
+}
+
+.block_adminblock .header:after {
+    color: #3d3d3d;
+    content:"\f055";
+}
+
+.block_feedback .header:after {
+    color: #ffce00;
+    content:"\f087";
+}
+
+.block_flickr .header:after {
+    color: #ff3096;
+    content:"\f03e";
+}
+
+.block_youtube .header:after {
+    color: #f42941;
+    content:"\f145";
+}
+
+.block_course_badges .header:after {
+    color: #29a294;
+    content:"\f091";
+}
+
+.block_twitter_search .header:after {
+    color: #008ecd;
+    content:"\f099";
+}
+
+.block_heritage .header:after {
+    color: #3e647e;
+    content:"\f02d";
+}
+
+.block_lrc .header:after {
+    color: #3e647e;
+    content:"\f02d";
+}
+
+.footer-icon {
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    height: 1.3em;
+    margin-left: -0.4em;
+    margin-right: 0.7em;
+    margin-top: -0.2em;
+    padding-top: 0.2em;
+    text-align: center;
+    width: 1.5em;
+    color: #ccc;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+}
+
+.footer-icon.website:hover, .footer-icon.website:focus {
+    color: #f42941;
+}
+.footer-icon.facebook:hover, .footer-icon.facebook:focus {
+    color: #4a6ea9;
+}
+.footer-icon.twitter:hover, .footer-icon.twitter:focus {
+    color: #00aced;
+}
+.footer-icon.googleplus:hover, .footer-icon.googleplus:focus {
+    color: #f42941;
+}
+.footer-icon.flickr:hover, .footer-icon.flickr:focus {
+    color: #ff3096;
+}
+.footer-icon.instagram:hover, .footer-icon.instagram:focus {
+    color: #b99c6b;
+}
+.footer-icon.youtube:hover, .footer-icon.youtube:focus {
+    color: #f42941;
+}
+.footer-icon.pinterest:hover, .footer-icon.pinterest:focus {
+    color: #f42941;
+}
+.footer-icon.linkedin:hover, .footer-icon.linkedin:focus {
+    color: #3e647e;
+}
+.footer-icon.apple:hover, .footer-icon.apple:focus {
+    color: #747474;
+}
+.footer-icon.android:hover, .footer-icon.android:focus {
+    color: #76b900;
+}
+
+.footer-icon.wikipedia:hover, .footer-icon.wikipedia:focus {
+    color: #747474;
+}

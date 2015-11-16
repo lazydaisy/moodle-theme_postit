@@ -23,7 +23,7 @@
  */
 
 // Get the HTML for the settings bits.
-$html = theme_clean_get_html_for_settings($OUTPUT, $PAGE);
+$html = theme_postit_get_html_for_settings($OUTPUT, $PAGE);
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
@@ -40,9 +40,9 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page" class="container-fluid">
 
-    <header id="page-header" class="clearfix">
-        <?php echo $html->heading; ?>
-    </header>
+    <div id="page-header" class="clearfix">
+        <?php echo $OUTPUT->page_heading(); ?>
+    </div>
 
     <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
@@ -50,11 +50,11 @@ echo $OUTPUT->doctype() ?>
         </section>
     </div>
 
-    <footer id="page-footer">
+    <div id="page-footer">
         <?php
         echo $OUTPUT->standard_footer_html();
         ?>
-    </footer>
+    </div>
 
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 

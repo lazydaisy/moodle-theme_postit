@@ -71,9 +71,10 @@ $string['pluginname'] = 'Postit';
 
 $string['region-postit-box1'] = 'Profile Box1';
 $string['region-postit-box2'] = 'Profile Box2';
-$string['textcolor'] = 'Text colour';
-$string['textcolor_desc'] = 'The main colour of all text excluding links.';
 
+$string['sidewayheadercolor'] = 'Sideway Header Colour';
+$string['sidewayheadercolor_desc'] = 'Pick the colour of your choice for the block headers.';
 
 $string['region-side-pre'] = 'Left';
 $string['region-side-post'] = 'Right';
+$string['region-side-senter'] = 'Center';

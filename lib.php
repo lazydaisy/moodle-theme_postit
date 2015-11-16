@@ -65,9 +65,6 @@ function theme_postit_extra_less($theme) {
  */
 function theme_postit_less_variables($theme) {
     $variables = array();
-    if (!empty($theme->settings->textcolor)) {
-        $variables['textColor'] = $theme->settings->textcolor;
-    }
     if (!empty($theme->settings->linkcolor)) {
         $variables['linkColor'] = $theme->settings->linkcolor;
     }
@@ -115,7 +112,7 @@ function theme_postit_set_logo($css, $logo) {
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (is_null($replacement)) {
-        $replacement = '';
+        $replacement = $theme->pix_url('images/logo','theme');
     }
 
     $css = str_replace($tag, $replacement, $css);
@@ -180,14 +177,6 @@ function theme_postit_set_customcss($css, $customcss) {
 function theme_postit_get_html_for_settings(renderer_base $output, moodle_page $page) {
     global $CFG;
     $return = new stdClass;
-
-    // Only display the logo on the front page and login page, if one is defined.
-    if (!empty($page->theme->settings->logo) &&
-            ($page->pagelayout == 'frontpage' || $page->pagelayout == 'login')) {
-        $return->heading = html_writer::tag('div', '', array('class' => 'logo'));
-    } else {
-        $return->heading = $output->page_heading();
-    }
 
     $return->footnote = '';
     if (!empty($page->theme->settings->footnote)) {

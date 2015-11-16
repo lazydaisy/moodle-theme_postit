@@ -35,11 +35,11 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
 
-    // @textColor setting.
-    $name = 'theme_postit/textcolor';
-    $title = get_string('textcolor', 'theme_postit');
-    $description = get_string('textcolor_desc', 'theme_postit');
-    $default = '#333333';
+    // @sidewayHeaderColor setting.
+    $name = 'theme_postit/sidewayheadercolor';
+    $title = get_string('sidewayheadercolor', 'theme_postit');
+    $description = get_string('sidewayheadercolor_desc', 'theme_postit');
+    $default = '#FFDD33';
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
@@ -48,7 +48,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_postit/linkcolor';
     $title = get_string('linkcolor', 'theme_postit');
     $description = get_string('linkcolor_desc', 'theme_postit');
-    $default = '#003366';
+    $default = '#FF9933';
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);

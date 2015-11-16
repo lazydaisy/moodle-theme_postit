@@ -1,6 +1,6 @@
 /* Custom CSS
 -------------------------*/
-div.logo {
+#logo {
     background-image: url([[setting:logo]]);
 }
 
@@ -16,8 +16,11 @@ div.logo {
     border-style: solid;
     border-width: 1px 1px 1px 34px;
 }
+.jsenabled .block.hidden .header {
+    border-bottom: 0 none;
+}
 .jsenabled .block .header h2 {
-    font: bold 12px Sans-Serif;
+    font: bold 12px Sans-Serif, FontAwesome;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #fff;
@@ -59,13 +62,13 @@ div.logo {
 
 .jsenabled .block.hidden .header h2,
 .jsenabled .block.block_adminblock .header h2 {
-    padding: 5px 10px;
+    padding: 5px 35px 5px 5px;
     margin-top: 6px;
     line-height: 1;
     font: bold 12px Sans-Serif;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #fff!important;
+    color: #fff;
     /* Abs positioning makes it not take up vert space */
     position: absolute;
     top: 0;
@@ -89,19 +92,24 @@ div.logo {
 
 .jsenabled .block.block_adminblock {
     padding: 30px 10px 0;
+    border-width: 1px;
 }
-
+.jsenabled .block.block_adminblock .header {
+    height: 0;
+}
 .jsenabled .block_adminblock .content .singleselect {
+    max-width: 100%;
     width: 100%;
-    max-width: 200px;
     margin: 0;
-    margin-left: 1px;
     padding: 0;
     display: block;
 }
 /* Block min-height
 -------------------------*/
 
+.jsenabled .block_adminblock {
+    height: 65px;
+}
 .jsenabled .block_site_main_menu,
 .jsenabled .block_messages {
     min-height: 100px;
@@ -115,7 +123,7 @@ div.logo {
 .jsenabled .block_private_files {
     min-height: 150px;
 }
-.jsenabled .block_adminblock,
+
 .jsenabled .block_mentees,
 .jsenabled .block_badges,
 .jsenabled .block_blog_menu,
@@ -181,14 +189,41 @@ div.logo {
 }
 
 .editing .block .header .commands {
+    clear: both;
     display: block;
+    padding-top: 10px;
+    text-align: right;
 }
-
+.editing .block .title .header {
+    background-color: #abc;
+    height: 60px;
+}
 .block .header h2 {
     padding: 10px 15px;
 }
+.block .header .block_action {
+    float: right;
+    padding: 5px;
+}
 
+.coursebox {
+    border: 0 none;
+}
 
+/* COMMAND ICONS (2011-10-13)
+-------------------------------------*/
+img.iconsmall,
+.block.block_with_controls div.header div.commands a img,
+.course-content ul.topics li.section .right img,
+.course-content ul.topics li.section .left img {
+    height: 15px;
+    margin: 2px;
+    width: 15px;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    padding: 1px;
+    border-radius: 5px;
+}
 
 /* Custom CSS Settings
 -------------------------*/

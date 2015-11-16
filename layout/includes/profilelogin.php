@@ -16,23 +16,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Configuration for Moodle's base theme.
- *
- * This theme is special, and implements a minimalist theme with only
- * basic layout. It is intended as a base for other themes to build upon.
- * It is not recommend to actually choose this theme for production sites!
- *
- * DO NOT COPY THIS TO START NEW THEMES!
- * Start with another theme, like "standard".
- *
- * For full information about creating Moodle themes, see:
- *  http://docs.moodle.org/dev/Themes_2.0
- *
  * @package   theme_postit
  * @copyright 2015 Mary Evans
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 
     function get_content () {
     global $USER, $CFG, $SESSION, $COURSE;
@@ -45,7 +32,8 @@
         $wwwroot = str_replace("http://", "https://", $CFG->wwwroot);
     }
 
-if (!isloggedin() or isguestuser()) {
+if (!isloggedin()) {
+
     echo '<div id="profilelogin">';
     echo '<form id="login" method="post" action="'.$wwwroot.'/login/index.php?authldap_skipntlmsso=1">';
     echo '<ul>';
@@ -53,10 +41,7 @@ if (!isloggedin() or isguestuser()) {
     echo '<li><input class="loginform" type="password" name="password" id="login_password" value="" placeholder="'.get_string('password').'" /></li>';
     echo '<li><input type="submit" value="&nbsp;&nbsp;'.get_string('login').'&nbsp;&nbsp;" /></li>';
     echo '</ul>';
-    echo '</form>';
+    echo '<form>';
     echo '</div>';
-} else {
-    echo '<div id="profilepic">';
-    echo $OUTPUT->user_picture($USER, array('size'=>50));
-    echo '</div>';
+
 } ?>

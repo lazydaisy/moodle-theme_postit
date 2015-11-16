@@ -24,7 +24,7 @@
 
 $THEME->name = 'postit';
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom');
+$THEME->sheets = array('font-awesome', 'blockicons', 'custom');
 $THEME->lessfile = 'moodle';
 $THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle'));
 $THEME->lessvariablescallback = 'theme_postit_less_variables';
@@ -40,59 +40,58 @@ $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(
         'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
-
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
     ),
     // Main course page.
     'course' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
         'options' => array('langmenu' => true),
     ),
     'coursecategory' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
     ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
     ),
     // The site home page.
     'frontpage' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
         'options' => array('nonavbar' => true),
     ),
     // Server administration scripts.
     'admin' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
     ),
     // My dashboard page.
     'mydashboard' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
         'options' => array('langmenu' => true),
     ),
     // My public page.
     'mypublic' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
     ),
     'login' => array(
         'file' => 'default.php',
@@ -138,16 +137,15 @@ $THEME->layouts = array(
     // The pagelayout used for reports.
     'report' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-center', 'side-post'),
+        'defaultregion' => 'side-center',
     ),
     // The pagelayout used for safebrowser and securewindow.
     'secure' => array(
         'file' => 'secure.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => array('side-pre', 'side-center', 'side-post'),
         'defaultregion' => 'side-post'
     ),
 );
-
 
 $THEME->javascripts_footer = array('postittoggle','postit');

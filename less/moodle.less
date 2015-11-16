@@ -3,9 +3,13 @@
  */
 @import "../../bootstrapbase/less/moodle.less";
 
-// Set sideway header colours
-@bodyColor:                         #036;
-@sidewayHeaderColor:                #369; // Alternative #6F6B8E
+// Add postit variables
+@bodyBackground:        #fff;
+@grayLighter:           #eee;
+@linkColor:             #f93;
+@sidewayHeaderColor:    #fd3;
+@btnPrimaryBackground:  #08c;
+
 
 /* Modified Moodle CSS by Mary Evans based on
    CSS-Tricks Example
@@ -21,40 +25,45 @@
 .jsenabled .block.block_adminblock {
     background-color: @sidewayHeaderColor;
 }
-
-/* COMMAND ICONS (2011-10-13)
--------------------------------------*/
-img.iconsmall,
-.block.block_with_controls div.header div.commands a img,
-.course-content ul.topics li.section .right img,
-.course-content ul.topics li.section .left img {
-    height:15px;
-    margin:2px;
-    width:15px;
-    background-color: #eee;
-    border: 1px solid #aaa;
-    padding:1px;
-    -webkit-border-radius:5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+.editing .block.hidden .header {
+    height: 60px;
 }
+.editing .block.hidden .header .commands {
+    padding: 5px;
+}
+.block {
+    margin: 0;
+    padding: 5px;
+    background-color: @white;;
+    .content {
+        padding: 4px;
+        .block_tree_box {
+            overflow-y: auto;
+            height: 250px;
+        }
+    }
+    .header {
+        height: 40px;
+        border-bottom: 1px solid @grayLighter;
+    }
+}
+
+// Postit Theme main styles
 
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    color: #333;
+    background-color: @bodyBackground;
 }
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, input, textarea {
     font-family: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial,sans-serif;
 }
-a:link, a:visited { color: #036;}
-
-a:active {
-    outline: 0;
+a:link,
+a:visited {
+    color: @linkColor;
 }
-a:focus {
-    outline: 0;
+a:hover {
+    color: @linkColorHover;
 }
 #page {
     font-family: 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -62,17 +71,17 @@ a:focus {
     margin: 0 auto;
     padding: 0;
 }
+#profiletoggle {
+    margin-top: 40px;
+}
 #profilename {
     float: right;
     font-size: 1.4em;
     font-weight: bold;
-    letter-spacing: -2px;
-    margin: 0;
-    margin-top: 40px;;
     margin-right: 2px;
+    margin-top: 55px;
     text-align: right;
     text-decoration: none;
-    width: 390px;
     ul {
         li {
             padding-left: 10px;
@@ -85,22 +94,28 @@ a:focus {
     img {
         vertical-align: middle;
     }
-    a:hover {
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:focus,
+    a:active {
         text-decoration: none;
     }
 }
 #profilepic {
     text-align: right;
     float: right;
-    margin: 2px 0 2px 2px;
+    margin: 2px;
+    margin-right: 0;
     width: 80px;
     height: 80px;
-    border: 1px solid #eee;
+    border: 1px solid @grayLighter;
     display: inline;
     img {
         width: 74px;
         height: 74px;
-        border: 3px solid #fff;
+        border: 3px solid @white;
     }
 }
 #profilebar-outerwrap {
@@ -125,9 +140,54 @@ a:focus {
     margin: 0;
     padding: 5px;
     width: auto;
-    background-color: lighten(@sidewayHeaderColor, 25%);
+    background-image: url([[pix:theme|profile/profilebar-bg]]);
     border-radius: 3px 3px 0 0;
+    .usermenu {
+        background-color: @sidewayHeaderColor;
+        .usertext {
+            font: bold 12px Sans-Serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1;
+        }
+        .userbutton {
+            float: left;
+            .avatars {
+                .avatar {
+                    display: none;
+                }
+            }
+        }
+        ul {
+            float: right;
+            width: 300px;
+            li {
+                float: left;
+                width: 300px;
+                .menu-action-text {
+                    font: bold 12px Sans-Serif;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    line-height: 1;
+                    margin-left: 5px;
+                }
+                img {
+                    height:15px;
+                    margin:2px;
+                    width:15px;
+                    background-color: @grayLighter;
+                    border: 1px solid #aaa;
+                    padding:1px;
+                    -webkit-border-radius:5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
 }
+
 #profilelogin {
     text-align: right;
     width: 390px;
@@ -161,19 +221,18 @@ a:focus {
         text-decoration: none;
     }
 }
-div.logo {
+#logo {
     display: block;
     float: left;
     height: 75px;
-    margin: 0;
+    margin: 40px 0 0;
     padding: 0;
-    width: 50%;
     background-position: left top;
     background-repeat: no-repeat;
 }
 
 .dir-rtl {
-    div.logo {
+    #logo {
         float: right;
         background-position: right top;
     }
@@ -187,3 +246,56 @@ div.logo {
 body.dir-rtl {
     background-position: right top;
 }
+.navbar {
+    margin-bottom: 0;
+}
+#page-content {
+    background-color: @white;
+    padding-top: 0;
+}
+#page-header .page-header-headings {
+    margin: 0;
+}
+/* Usermenu customisation
+------------------------------------------*/
+
+.jsenabled {
+    .moodle-actionmenu[data-enhance] {
+        .toggle-display {
+            &.textmenu {
+                .caret {
+                    border-top-color: @white;
+                    &:hover,
+                    &:active {
+                        border-top-color: @white;
+                    }
+                }
+            }
+        }
+    }
+    .usermenu {
+        .moodle-actionmenu {
+            .toggle-display {
+                .caret {
+                    top: 9px;
+                }
+            }
+        }
+        > .menu .filler {
+            margin: 0;
+        }
+    }
+}
+/* Block - Edit menu
+------------------------------------------*/
+.moodle-actionmenu {
+    &.show[data-enhanced] {
+        .menu {
+            background-color: @white;
+            border: 1px solid @linkColor;
+            border-radius: 3px;
+            box-shadow: none;
+        }
+    }
+}
+

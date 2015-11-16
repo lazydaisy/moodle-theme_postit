@@ -60,11 +60,10 @@ function xmldb_theme_postit_upgrade($oldversion) {
     if ($oldversion < 2015111001) {
 
         // Set the default settings as they might already be set.
-        set_config('textcolor', '#333333', 'theme_postit');
-        set_config('linkcolor', '#003366', 'theme_postit');
-        set_config('sidewayheadercolor', '#336699', 'theme_postit');
+        set_config('linkcolor', '#ff9933', 'theme_postit');
+        set_config('sidewayheadercolor', '#ffdd99', 'theme_postit');
         set_config('backgroundrepeat', 'repeat', 'theme_postit');
-        set_config('backgroundimage', '/images/postit_bg.jpg', 'theme_postit');
+        set_config('backgroundimage', '/images/postit.jpg', 'theme_postit');
 
         upgrade_plugin_savepoint(true, 2015111001, 'theme', 'postit');
     }
